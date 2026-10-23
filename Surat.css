@@ -10,7 +10,7 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #3e2723;
     overflow-x: hidden;
-    height: 100vh;
+    min-height: 100vh; /* Diubah agar konten tidak terpotong saat layar HP kecil */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,7 +117,7 @@ p {
     flex: 1;
     min-width: 300px;
     display: flex;
-    flex-direction: column; /* Menyusun foto dan lirik ke bawah secara vertikal */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -174,7 +174,7 @@ p {
     text-align: center;
     line-height: 1.4;
     min-height: 1.4rem;
-    transition: opacity 0.3s ease-in-out; /* Efek transisi halus teks lirik */
+    transition: opacity 0.3s ease-in-out; 
 }
 
 .lyrics-container .song-title {
@@ -187,19 +187,19 @@ p {
     text-align: center;
 }
 
-/* --- Area Teks Surat (DIPERBARUI) --- */
+/* --- Area Teks Surat --- */
 .text-section {
     flex: 1.2;
     min-width: 300px;
-    background: rgba(255, 255, 255, 0.45); /* Sedikit lebih tebal agar teks lebih terbaca */
+    background: rgba(255, 255, 255, 0.45); 
     padding: 40px 45px;
-    border-radius: 15px; /* Dibuat sedikit lebih kotak agar mirip kartu surat */
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08), inset 0 0 0 2px rgba(255, 255, 255, 0.6); /* Efek inner border */
+    border-radius: 15px; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08), inset 0 0 0 2px rgba(255, 255, 255, 0.6); 
     backdrop-filter: blur(12px);
-    position: relative; /* Wajib untuk wax seal */
+    position: relative; 
 }
 
-/* Elemen Baru: Stempel Lilin (Wax Seal) */
+/* Stempel Lilin (Wax Seal) */
 .wax-seal {
     position: absolute;
     top: -20px;
@@ -220,7 +220,7 @@ p {
     transform: rotate(15deg);
 }
 
-/* Elemen Baru: Header Tanggal */
+/* Header Tanggal */
 .letter-header {
     text-align: right;
     margin-bottom: 25px;
@@ -236,7 +236,7 @@ p {
     font-weight: 500;
 }
 
-/* Elemen Baru: Area Tanda Tangan */
+/* Area Tanda Tangan */
 .signature {
     margin-top: 35px;
     text-align: right;
@@ -322,6 +322,12 @@ p {
 
 /* --- Tampilan Mobile (Responsif) --- */
 @media (max-width: 768px) {
+    /* Mencegah konten terpotong ke atas dan memunculkan scroll */
+    body {
+        align-items: flex-start; 
+        padding: 40px 0; 
+    }
+
     /* Menyesuaikan ukuran overlay awal di HP */
     .overlay-content {
         padding: 30px 20px;
@@ -338,20 +344,21 @@ p {
     /* Meluaskan area konten utama agar tidak terlalu sempit di HP */
     .container {
         width: 95%;
-        padding-top: 20px;
+        padding-top: 10px;
         padding-bottom: 20px;
     }
     
     .content-wrapper {
         flex-direction: column;
-        gap: 25px;
+        gap: 30px;
         padding: 10px;
     }
     
-    /* Memperkecil sedikit foto agar tidak memakan satu layar penuh */
+    /* Ukuran foto proporsional untuk HP */
     .image-frame {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
+        margin-top: 10px;
     }
 
     .lyrics-container {
@@ -361,6 +368,7 @@ p {
     /* Mengurangi padding dalam surat agar area baca lebih luas */
     .text-section {
         padding: 30px 20px 20px 20px;
+        margin-bottom: 20px;
     }
 
     .wax-seal {
