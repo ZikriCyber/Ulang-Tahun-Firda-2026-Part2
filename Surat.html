@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sayang!</title>
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="Surat.css">
+    <!-- Mengambil font estetik dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- Audio Element (Musik Background) -->
+    <audio id="bgMusic" loop>
+        <!-- Ganti 'src' dengan Direct Link MP3 lagu Anda -->
+        <source src="https://www.image2url.com/r2/default/audio/1792723588856-6b6334f5-9503-49ae-9a04-d8992e955ed4.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Halaman Pembuka untuk mengaktifkan musik -->
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <h1>Ada pesan spesial buat kamu...</h1>
+            
+            <!-- Peringatan F11 -->
+            <p class="f11-warning">✨ Tekan <b>F11</b> di keyboard untuk tampilan layar penuh ✨</p>
+            
+            <button id="openBtn">Buka Pesannya ❤️</button>
+        </div>
+    </div>
+
+    <!-- Konten Utama -->
+    <main class="container hidden" id="mainContent">
+        <!-- Animasi Hati Beterbangan -->
+        <div class="floating-hearts">
+            <div class="heart">❤️</div>
+            <div class="heart">💖</div>
+            <div class="heart">💕</div>
+            <div class="heart">🌸</div>
+            <div class="heart">✨</div>
+            <div class="heart">❤️</div>
+        </div>
+
+        <!-- Wrapper Konten -->
+        <div class="content-wrapper">
+            <!-- Bagian Kiri: Foto & Lirik Sinkron -->
+            <div class="image-section">
+                <div class="image-frame">
+                    <!-- Ganti gambar lokal dengan tautan URL -->
+                    <img src="https://cdn.phototourl.com/member/2026-10-23-473d87a8-7b2f-4b34-9153-98e432791892.jpg" class="profile-pic">
+                    <div class="frame-decoration"></div>
+                </div>
+
+                <!-- Wadah Lirik Lagu -->
+                <div class="lyrics-container fade-in delay-2">
+                    <p id="active-lyric">🎵 Memutar musik... 🎵</p>
+                    <p class="song-title">🎵 Di akhir perang - Nadin Amizah 🎵</p>
+                </div>
+            </div>
+
+            <!-- Bagian Kanan: Teks Surat (Dipercantik) -->
+            <div class="text-section">
+                <!-- Elemen Tambahan: Wax Seal -->
+                <div class="wax-seal delay-1 fade-in">❤️</div>
+
+                <!-- Elemen Tambahan: Header Surat -->
+                <div class="letter-header fade-in delay-1">
+                    <span class="date">Hari Spesialmu, 26 Oktober 2026</span>
+                </div>
+
+                <h2 class="fade-in delay-1">Haiii,</h2>
+                
+                <p class="fade-in delay-2">
+                    Apa kabar cintaku? Semoga hari ini kamu selalu diliputi kebahagiaan dan senyum yang manis ya. ❤️
+                </p>
+                
+                <p class="fade-in delay-3">
+                    Selamat ulang tahun yang ke-19, cintakuuu! Di usiamu yang baru ini, perjalanan kamu pasti bakal makin seru dan penuh tantangan. Tapi ingat ya, kamu nggak pernah berjalan sendirian.
+                </p>
+                
+                <p class="fade-in delay-4">
+                    Kapan pun ada hal yang membuatmu kesusahan, materi bikin pusing, atau sekadar butuh teman diskusi, ada aku di sini yang selalu siap sedia nemenin dan bantu kamu kok. Tetap semangat kuliahnya dan jalani hari-hari kamu dengan ceria. Aku yakin banget kamu bisa melewati semuanya dengan hebat!
+                </p>
+                
+                <!-- Elemen Tambahan: Penutup / Tanda Tangan -->
+                <div class="signature fade-in delay-5">
+                    <h3>Loveeee Youuuu Sayangg ❤️</h3>
+                    <p class="sender">- Dari seseorang yang kadang di anggap tidak ada</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="CODE JS.js"></script>
+</body>
+</html>

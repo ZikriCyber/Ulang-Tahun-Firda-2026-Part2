@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Mencegah scroll */
+    background-color: #f5f5f5;
+}
+
+/* === GRID 4 FOTO (SEJAJAR HORIZONTAL) === */
+.collage-grid {
+    display: grid;
+    /* Membagi layar menjadi 4 kolom sejajar ke samping dan 1 baris penuh */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Di belakang overlay */
+}
+
+.collage-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan foto memenuhi irisan kolomnya tanpa gepeng */
+    filter: sepia(30%) saturate(120%) brightness(95%) contrast(85%); 
+    transition: filter 0.3s ease;
+}
+
+/* === KONTEN TENGAH (OVERLAY) === */
+.overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Cahaya putih di tengah agar teks jelas terbaca */
+    background: radial-gradient(circle, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.2) 50%, transparent 80%);
+    pointer-events: none; 
+    z-index: 2; /* Di depan grid kolase */
+}
+
+/* === EFEK TEKS STIKER 3D === */
+.sticker-text {
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 8rem;
+    color: white;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    transform: rotate(-5deg); 
+    pointer-events: auto;
+    
+    /* Transisi agar efek pergantian teks menjadi halus */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    
+    text-shadow: 
+        -5px -5px 0 #ff69b4,  
+         5px -5px 0 #ff69b4,
+        -5px  5px 0 #ff69b4,
+         5px  5px 0 #ff69b4,
+        -7px  0   0 #ff69b4,
+         7px  0   0 #ff69b4,
+         0   -7px 0 #ff69b4,
+         0    7px 0 #ff69b4,
+         0   15px 20px rgba(0,0,0,0.35); 
+}
+
+/* === TOMBOL PLAY === */
+.play-btn {
+    width: 90px;
+    height: 90px;
+    background-color: #ffb6c1; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    pointer-events: auto;
+    box-shadow: 0 0 0 12px rgba(255, 182, 193, 0.4); 
+    transition: all 0.3s ease-in-out;
+}
+
+.play-icon {
+    width: 0; 
+    height: 0; 
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-left: 28px solid white;
+    margin-left: 8px; 
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff69b4; 
+    box-shadow: 0 0 0 16px rgba(255, 105, 180, 0.3), 0 15px 25px rgba(0,0,0,0.25);
+}
+
+/* === PENGATURAN RESPONSIF (UNTUK HP) === */
+@media (max-width: 768px) {
+    .sticker-text {
+        font-size: 4rem; /* Diperkecil agar teks 'Welcome' tidak terpotong di layar kecil */
+    }
+    .play-btn {
+        width: 70px;
+        height: 70px;
+    }
+    /* Mengubah grid menjadi 2x2 agar 4 foto tampil berbentuk kotak (2 atas, 2 bawah) dan tidak gepeng */
+    .collage-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
